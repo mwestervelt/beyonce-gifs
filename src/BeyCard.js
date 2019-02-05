@@ -1,12 +1,21 @@
 import React, { Component } from "react";
 
-class BeyCard extends React.Component {
+class BeyCard extends Component {
+
+  handleFav = () => (this.props.handleFavorite(this.props.bey));
+
   render() {
-    console.log(this.props);
     return (
-      <div>
-        <h3>{/*Bey name goes here*/}</h3>
-        {/*image tag goes here*/}
+      <div className="ui card" onClick={this.handleFav}>
+        <div className="content">
+          <div className="header">{this.props.bey.name}{" "}
+         </div>
+
+        </div>
+        <div className="image">
+          <img alt="beygif" src={this.props.bey.img} />
+
+          </div>
       </div>
     );
   }
